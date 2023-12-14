@@ -1,23 +1,19 @@
 # IR_project_wpi
-#recommmend.py
 This is the code and related data of the final project for the wpi information retrieval class
+This file is the recommend.py
 
+# Rest of your script
 import ssl
 from geopy.geocoders import Nominatim
-
 import certifi
 import geopy.geocoders
 from math import radians, sin, cos, sqrt, atan2
-
-#
 geopy.geocoders.options.default_ssl_context = ssl.create_default_context(cafile=certifi.where())
-
 geolocator = Nominatim(user_agent="my_geocoder")
-# Rest of your script
+
 
 def get_coordinates(city_list):
     coordinates = []
-
     for city in city_list:
         location = geolocator.geocode(city)
         if location:
@@ -25,14 +21,14 @@ def get_coordinates(city_list):
             coordinates.append({"City": city, "Latitude": lat, "Longitude": lon})
         else:
             print(f"Unable to geocode {city}")
-
     return coordinates
 
-#cities = ["Boston","New York City","Los Angeles","D.C.","Chicago",
-          #"Seattle", "Atlanta", "Chicago", "Salt Lake City", "Houston", "Miami"]
+"cities = ["Boston","New York City","Los Angeles","D.C.","Chicago",
+          #"Seattle", "Atlanta", "Chicago", "Salt Lake City", "Houston", "Miami"]"
 
 #city_coordinates = get_coordinates(cities)
-# turn the geolocation into latitude
+
+#turn the geolocation into latitude
 
 def haversine_distance(lat1, lon1, lat2, lon2):
     lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
