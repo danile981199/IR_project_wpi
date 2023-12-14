@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation App</title>
+</head>
+<body>
+    <h1>Recommendation App</h1>
+    <form action="/recommend" method="post">
+        <label for="target_city">Target City:</label>
+        <input type="text" name="target_city" required><br>
+
+        <label for="selected_value_1">Category Please enter:Clothing,Food,Outdoors,Home,Beauty&Health:</label>
+        <input type="text" name="selected_value_1" required><br>
+
+        <label for="device_model">Device Model:</label>
+        <input type="text" name="device_model" required><br>
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+</body>
+</html>
