@@ -116,66 +116,111 @@ def find_nearest_city(target_city, cities_data):
 
 
 # Example usage
+
 #target_city = input("Please enter the location: ")
+
 #loca_similarity,nearest_city= find_nearest_city(target_city, city_coordinates)
+
 #path= "/Users/a981199/Desktop/IR_dataset0.csv"
+
 #table_data = pd.read_csv(path)
+
 #selected_column_1 = 'Category'# Replace with the actual column name
+
 #selected_value_1 = input("Enter the category: Clothing, Beauty&Health, Home, Food or Outdoors:") # Replace with the value you want to filte
+
 #print (selected_value_1)
+
 #filtered_rows_1 = table_data[table_data[selected_column_1] == selected_value_1]
+
 #if filtered_rows_1.empty:
+
 #print('filtered1 empty')
+
 #else:
+
     #print('0')
 
 #device_model = input("Enter your device model: ")
+
 def device_price(device_model):
+
     # Convert device_model to lowercase for case-insensitive matching
+    
     device_model_lower = device_model.lower()
+    
     if "iphone 15" in device_model_lower or "iphone 15 pro" in device_model_lower:
+    
         result = "high"
+        
     else:
+    
         result = "low"
+        
     return result
 
 #product_value=device_price(device_model)
+
 #print (product_value)
+
 def column2(geosimilarity):
+
     if geosimilarity>=0.4:
+    
         return 'Selling Price'  # Replace with the actual column name
+        
     else:
         return 'Location'
+        
 #selected_column_2= column2(loca_similarity)
 
 def product_price(product_value, filtered_rows, selected_column):
 
     if not filtered_rows.empty:
+    
         column_values = filtered_rows[selected_column].tolist()
+        
         print(column_values)
+        
         if product_value == "high":
+        
             result1 = max(column_values)
+            
         else:
+        
             result1 = min(column_values)
+            
         return result1
+        
     else:
+    
         return None
 
 #if selected_column_2=='Selling Price':
+
     selected_value_2 = product_price(product_value, filtered_rows_1, selected_column_2)
+    
 #else:
+
     selected_value_2= nearest_city
 
 #print(selected_value_2)
 
 # Filter rows based on the conditions
+
 #filtered_rows_2 = filtered_rows_1[filtered_rows_1[selected_column_2] == selected_value_2]
 
 # Check if any rows match the conditions
+
 #if not filtered_rows_2.empty:
+
     # Print the information of the first matching row (you can modify as needed)
+    
     #print("Information for the row with", selected_column_1, "=", selected_value_1, "and", selected_column_2, "=",
-          #selected_value_2)
+          selected_value_2)
+          
     #print(filtered_rows_2.iloc[0])
+    
 #else:
+
     #print("No matching rows found.")
