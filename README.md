@@ -3,12 +3,19 @@ This is the code and related data of the final project for the wpi information r
 This file is the recommend.py
 
 # Rest of your script
+
 import ssl
+
 from geopy.geocoders import Nominatim
+
 import certifi
+
 import geopy.geocoders
+
 from math import radians, sin, cos, sqrt, atan2
+
 geopy.geocoders.options.default_ssl_context = ssl.create_default_context(cafile=certifi.where())
+
 geolocator = Nominatim(user_agent="my_geocoder")
 
 
